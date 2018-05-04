@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>SimpleWatch</title>
+</head>
+
+<body>
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="./p5.min.js"></script>
+
+    <script type="text/javascript">
+        var timeString;
+        var dateString;
+
+        eel.expose(set_date_time);
+        function set_date_time(x,y) {
+            dateString = x;
+            timeString = y;
+        }
+
+        var myFont;
+        function preload() {
+            myFont = loadFont('./assets/font/DIGITALDREAM.ttf');
+        }
+
+        function setup() {
+            createCanvas(400, 300);
+            frameRate(20);
+        }
+
+        function draw() {
+            background(255);
+            //clear();
+            //textFont(`Verdana`);
+            textFont(myFont);
+            fill(50,100,180);
+            textSize(18);
+            text(dateString, 10, 20);
+            textSize(42);
+            text(timeString, 10, 60);
+
+            /*
+                        if (mouseIsPressed) {
+                            fill(0);
+                        } else {
+                            fill(255);
+                        }
+                        ellipse(mouseX, mouseY, 80, 80);
+            */
+        }
+    </script>
+
+</body>
+
+</html>
